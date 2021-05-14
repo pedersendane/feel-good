@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function ListItem(props) {
     const data = props.data;
         return (
-            <div id="previousDays" style={{display: ''}}>
+            <div id="previousDays" style={{display: 'none'}}>
                 <h2 class="text-center py-4">Previous Days</h2>
                 {data.map(details => (
                 <div style={{'backgroundColor': '#161b22'}} class="card-body py-4 mt-3" key={details.id}>

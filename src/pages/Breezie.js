@@ -1,10 +1,11 @@
 import React from 'react'
+import FeelGoodForm from '../components/FeelGoodForm'
 import ListContainer from '../components/ListContainer'
 
 export default function Breezie() {
   return (
-    <div className="title">
-      <h2>Breezie's Page</h2>
+    <div >
+      <FeelGoodForm />
       <ListContainer name={"Breezie"}/>
       </div>
     ) 

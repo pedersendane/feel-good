@@ -19,19 +19,7 @@ updatedAt: "2021-05-14T02:23:09.459Z"
 wake_up: "7:30"
 */ 
 export default function FetchDayDetails() {
-    const [data, dataSet] = useState([{
-        changes: '',
-        comments: '',
-        createdAt: '',
-        diet: false,
-        enough_sleep: false,
-        excercise: false,
-        good_day: false,
-        id: '',
-        medicine: false,
-        updatedAt: '',
-        wake_up: '',
-    }]);
+    const [data, dataSet] = useState();
     const [loading, loadingSet] = useState(true);
 
     useEffect(() => {

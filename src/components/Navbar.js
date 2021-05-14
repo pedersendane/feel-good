@@ -17,7 +17,7 @@ export default function Navbar() {
     <Router>
         <div>
               <div id="nav">
-                  <Link className="hover" to="/"><img id="navImage" src={Logo} alt={'Logo'}/></Link>
+                  <Link className="hover" to="/feel-good"><img id="navImage" src={Logo} alt={'Logo'}/></Link>
                 <div id="navLinkContainer">
                     <NavLink className="navLink" to="/feel-good/dane">Dane</NavLink>
                     <NavLink className="navLink" to="/feel-good/breezie">Breezie</NavLink>
@@ -30,9 +30,12 @@ export default function Navbar() {
         <Route path="/feel-good/breezie">
             <Breezie />
         </Route>
-        <Route path="/">
+        <Route path="/feel-good">
             <Home />
-        </Route>
+                  </Route>
+                  <Route path="/">
+                      <Home />
+                  </Route>
         </Switch>
         </div>
       </Router>
