@@ -13,6 +13,7 @@ export default class ListItem extends React.Component{
         }
         this.badDaysOnly = this.badDaysOnly.bind(this);
         this.goodDaysOnly = this.goodDaysOnly.bind(this);
+        this.allDays = this.allDays.bind(this);
     }
     badDaysOnly(event) {
         this.setState({
@@ -28,24 +29,37 @@ export default class ListItem extends React.Component{
         })
         console.log(this.state);
     }
+    allDays(event) {
+        this.setState({
+            goodDaysOnly: false,
+            badDaysOnly: false
+        })
+        console.log(this.state);
+    }
     render() {
         const data = this.state.data;
         const badDays = this.state.data.filter(day => day.good_day.toString() === 'false');
         const goodDays = this.state.data.filter(day => day.good_day.toString() === 'true');
+        const buttonRow = (<div class="text-center py-4 mt-3">
+        <button
+            class="btn btn-cyan waves-effect waves-light text-center"
+            type="button"
+            onClick={this.badDaysOnly}>Bad Days</button>
+        <button
+            class="btn btn-cyan waves-effect waves-light text-center"
+            type="button"
+            onClick={this.goodDaysOnly}>Good Days</button>
+        <button
+            class="btn btn-cyan waves-effect waves-light text-center"
+            type="button"
+            onClick={this.allDays}>All Days</button>
+        </div>)
+        
         if (this.state.badDaysOnly) {
             return (
                 <div id="previousDays" style={{ display: 'none' }}>
                     <h2 class="text-center py-4">Previous Days</h2>
-                    <div class="text-center py-4 mt-3">
-                        <button
-                            class="btn btn-cyan waves-effect waves-light text-center"
-                            type="button"
-                            onClick={this.badDaysOnly}>Show Only Bad Days</button>
-                        <button
-                            class="btn btn-cyan waves-effect waves-light text-center"
-                            type="button"
-                            onClick={this.goodDaysOnly}>Show Only Good Days</button>
-                    </div>
+                    {buttonRow}
                     {badDays.map(details => (
                         <div style={{ 'backgroundColor': '#161b22' }} class="card-body py-4 mt-3" key={details.id}>
                     
@@ -90,16 +104,8 @@ export default class ListItem extends React.Component{
             return (
                 <div id="previousDays" style={{ display: 'none' }}>
                     <h2 class="text-center py-4">Previous Days</h2>
-                    <div class="text-center py-4 mt-3">
-                        <button
-                            class="btn btn-cyan waves-effect waves-light text-center"
-                            type="button"
-                            onClick={this.badDaysOnly}>Show Only Bad Days</button>
-                        <button
-                            class="btn btn-cyan waves-effect waves-light text-center"
-                            type="button"
-                            onClick={this.goodDaysOnly}>Show Only Good Days</button>
-                    </div>
+                    {buttonRow}
+
                     {goodDays.map(details => (
                         <div style={{ 'backgroundColor': '#161b22' }} class="card-body py-4 mt-3" key={details.id}>
                     
@@ -144,16 +150,8 @@ export default class ListItem extends React.Component{
             return (
                 <div id="previousDays" style={{ display: 'none' }}>
                     <h2 class="text-center py-4">Previous Days</h2>
-                    <div class="text-center py-4 mt-3">
-                        <button
-                            class="btn btn-cyan waves-effect waves-light text-center"
-                            type="button"
-                            onClick={this.badDaysOnly}>Show Only Bad Days</button>
-                        <button
-                            class="btn btn-cyan waves-effect waves-light text-center"
-                            type="button"
-                            onClick={this.goodDaysOnly}>Show Only Good Days</button>
-                    </div>
+                    {buttonRow}
+
                     {data.map(details => (
                         <div style={{ 'backgroundColor': '#161b22' }} class="card-body py-4 mt-3" key={details.id}>
                     
