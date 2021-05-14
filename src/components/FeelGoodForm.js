@@ -135,16 +135,20 @@ export default class FeelGoodForm extends React.Component {
         if (response.ok) {
           console.log(response);
           this.setState({
-            success: 'Successfully Posted Your Update. Refresh to view it.'
+            success: 'Successfully Posted Your Update. Click here to return home'
           });
           var x = document.getElementById('success-message');
           x.scrollIntoView();
+          var y = document.getElementById('home-button');
+          y.style.display = 'initial';
           var form = document.getElementById('feel-good-form');
           form.style.display = 'none';
         } else {
           this.setState({
             failure: 'There was an error'
           })
+          var y = document.getElementById('home-button');
+          y.style.display = 'initial';
         }
       })
       .catch(error => {
@@ -154,6 +158,8 @@ export default class FeelGoodForm extends React.Component {
         });
         var x = document.getElementById('failure-message');
         x.scrollIntoView();
+        var y = document.getElementById('home-button');
+          y.style.display = 'initial';
         var form = document.getElementById('feel-good-form');
         form.style.display = 'none';
       });
@@ -188,7 +194,15 @@ export default class FeelGoodForm extends React.Component {
       <div class="card-body">
         
 
-          <div className="text-center" style={{ color: 'greenyellow'}}id="success-message"><h1>{this.state.success}</h1></div>
+          <div className="text-center" style={{ color: '#13aa52' }} id="success-message">
+            <h1>{this.state.success}</h1>
+            <div class="text-center py-4 mt-3">
+            <button id="home-button" style={{display: 'none'}} class="btn btn-green waves-effect waves-light" type="button" onClick={function (){
+              window.location.href = '/feel-good'
+              }}>Home</button>
+              </div>
+
+          </div>
         <div className="text-center" id="failure-message"><h1>{this.state.failure}</h1></div>
 
         <form id="feel-good-form" style={{'display': 'none'}} onSubmit={this.submit}>
