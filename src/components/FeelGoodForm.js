@@ -130,7 +130,7 @@ export default class FeelGoodForm extends React.Component {
       redirect: 'follow'
     };
 
-    fetch("http://highscore-api.herokuapp.com/day-details/", requestOptions)
+    fetch("https://highscore-api.herokuapp.com/day-details/", requestOptions)
       .then(response => {
         if (response.ok) {
           console.log(response);

@@ -36,7 +36,7 @@ export default function FetchDayDetails() {
 
     useEffect(() => {
         async function fetchMyAPI() {
-            let res = await axios.get('http://highscore-api.herokuapp.com/day-details')
+            let res = await axios.get('https://highscore-api.herokuapp.com/day-details')
             console.log(res.data);
             dataSet(res.data);
                 loadingSet(false);
