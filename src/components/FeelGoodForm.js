@@ -31,6 +31,7 @@ export default class FeelGoodForm extends React.Component {
     this.changes = this.changes.bind(this);
     this.comments = this.comments.bind(this);
     this.submit = this.submit.bind(this);
+    this.cancel = this.cancel.bind(this);
   }
   updateStyling(props) {
     console.log(props);
@@ -108,6 +109,26 @@ export default class FeelGoodForm extends React.Component {
       comments: props.target.value
     });
   };
+
+  cancel(props) {
+    this.setState({
+      enough_sleep: false,
+      medicine: false,
+      diet: false,
+      excercise: false,
+      good_day: false,
+      wake_up: '',
+      changes: '',
+      comments: '',
+      success: '',
+      failure: '',
+    });
+    var x = document.getElementById('feel-good-form');
+        x.style.display = 'none';
+    document.getElementById('previousDays').style.display = 'none';
+    document.getElementById('message-container').style.display = 'none';
+        document.getElementById('topButtonsContainer').style.display = 'block';
+  }
   
   submit(e) {
     e.preventDefault();
@@ -164,44 +185,56 @@ export default class FeelGoodForm extends React.Component {
         form.style.display = 'none';
       });
   }
-
+  
   render() {
+    const buttons = (<div  class="text-center py-4 mt-3">
+  <button
+      class="btn btn-cyan waves-effect waves-light text-center"
+      type="button"
+      onClick={
+        function (e) {
+          document.getElementById('message-container').style.display = 'block';
+        var x = document.getElementById('feel-good-form');
+        x.style.display = 'block';
+        x.scrollIntoView();
+        var y = document.getElementById('previousDays');
+        y.style.display = 'none';
+        var z = document.getElementById('topButtonsContainer');
+        z.style.display = 'none';
+      }
+    }>Submit New Form</button>
+      
+       <button
+      class="btn btn-cyan waves-effect waves-light text-center"
+      type="button"
+      onClick={
+      function (e) {
+        var x = document.getElementById('previousDays');
+        x.style.display = 'block';
+        x.scrollIntoView();
+        var y = document.getElementById('feel-good-form');
+        y.style.display = 'none';
+        var z = document.getElementById('topButtonsContainer');
+        z.style.display = 'none';
+      }
+    }>View Previous Days</button>
+    </div>)
+
     return (
       <>
+      <div id="topButtonsContainer">
         <h2 class="text-center py-4">FeelGood Forms</h2>
-        <div class="text-center py-4 mt-3">
-      <button
-          class="btn btn-cyan waves-effect waves-light text-center"
-          type="button"
-          onClick={
-          function (e) {
-            document.getElementById('feel-good-form').style.display = 'block';
-            document.getElementById('previousDays').style.display = 'none';
-          }
-        }>Submit New Form</button>
-          
-           <button
-          class="btn btn-cyan waves-effect waves-light text-center"
-          type="button"
-          onClick={
-          function (e) {
-            document.getElementById('feel-good-form').style.display = 'none';
-            document.getElementById('previousDays').style.display = 'block';
-          }
-        }>View Previous Days</button>
-        </div>
-        
-      <div class="card-body">
-        
-
+          {buttons}
+          </div>
+        <div class="card-body" id="message-container" style={{ display: 'none' }}>
+        <h1 className="text-center">New FeelGood Form</h1>
           <div className="text-center" style={{ color: '#13aa52' }} id="success-message">
-            <h1>{this.state.success}</h1>
+            <h2>{this.state.success}</h2>
             <div class="text-center py-4 mt-3">
             <button id="home-button" style={{display: 'none'}} class="btn btn-green waves-effect waves-light" type="button" onClick={function (){
               window.location.href = '/feel-good'
               }}>Home</button>
               </div>
-
           </div>
         <div className="text-center" id="failure-message"><h1>{this.state.failure}</h1></div>
 
@@ -277,7 +310,9 @@ export default class FeelGoodForm extends React.Component {
 
           <div class="text-center py-4 mt-3">
             <button class="btn btn-cyan waves-effect waves-light" type="button" onClick={this.submit}>Submit</button>
-          </div>
+            <button class="btn btn-cyan waves-effect waves-light" type="button" onClick={this.cancel}>Cancel</button>
+
+            </div>
         </form>
         </div>
         </>

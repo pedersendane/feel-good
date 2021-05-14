@@ -40,7 +40,31 @@ export default class ListItem extends React.Component{
         const data = this.state.data;
         const badDays = this.state.data.filter(day => day.good_day.toString() === 'false');
         const goodDays = this.state.data.filter(day => day.good_day.toString() === 'true');
-        const buttonRow = (<div class="text-center py-4 mt-3">
+        const getDateString = (d) => {
+            var date = new Date(d); 
+            var month = date.getMonth() + 1;
+            var day = date.getUTCDate();
+            var year = date.getFullYear();
+            console.log("Month: " + month)
+            console.log("Day: " + day)
+            console.log("Year: " + year)
+            return String(month + '/' + day + '/' + year);
+        }
+        const buttonRow = (<>
+            <div class="text-center py-4 mt-3">
+                <button
+            class="btn btn-cyan waves-effect waves-light text-center"
+            type="button"
+                    onClick={function () {
+                        document.getElementById('message-container').style.display = 'block';
+                        var x = document.getElementById('feel-good-form');
+                        x.style.display = 'block';
+                        x.scrollIntoView();
+                        var y = document.getElementById('previousDays');
+                        y.style.display = 'none';
+            }}>Submit New Form</button>
+            </div>
+            <div class="text-center py-4 mt-3">
         <button
             class="btn btn-cyan waves-effect waves-light text-center"
             type="button"
@@ -53,7 +77,8 @@ export default class ListItem extends React.Component{
             class="btn btn-cyan waves-effect waves-light text-center"
             type="button"
             onClick={this.allDays}>All Days</button>
-        </div>)
+            </div>
+        </>)
         
         if (this.state.badDaysOnly) {
             return (
@@ -65,9 +90,7 @@ export default class ListItem extends React.Component{
                     
                             <h2 className="text-center">
                                 Date: <i>{
-                                    new Date(details.createdAt.toString()).getMonth() + '/'
-                                    + new Date(details.createdAt.toString()).getUTCDate() + '/'
-                                    + new Date(details.createdAt.toString()).getFullYear()
+                                    getDateString(details.createdAt.toString()) 
                                 }</i>
                             </h2>
                             <h3 className="text-center">Overall: {details.good_day.toString() === 'true' ?
@@ -105,15 +128,12 @@ export default class ListItem extends React.Component{
                 <div id="previousDays" style={{ display: 'none' }}>
                     <h2 class="text-center py-4">Previous Days</h2>
                     {buttonRow}
-
                     {goodDays.map(details => (
                         <div style={{ 'backgroundColor': '#161b22' }} class="card-body py-4 mt-3" key={details.id}>
                     
-                            <h2 className="text-center">
+                    <h2 className="text-center">
                                 Date: <i>{
-                                    new Date(details.createdAt.toString()).getMonth() + '/'
-                                    + new Date(details.createdAt.toString()).getUTCDate() + '/'
-                                    + new Date(details.createdAt.toString()).getFullYear()
+                                    getDateString(details.createdAt.toString()) 
                                 }</i>
                             </h2>
                             <h3 className="text-center">Overall: {details.good_day.toString() === 'true' ?
@@ -151,15 +171,12 @@ export default class ListItem extends React.Component{
                 <div id="previousDays" style={{ display: 'none' }}>
                     <h2 class="text-center py-4">Previous Days</h2>
                     {buttonRow}
-
                     {data.map(details => (
                         <div style={{ 'backgroundColor': '#161b22' }} class="card-body py-4 mt-3" key={details.id}>
                     
-                            <h2 className="text-center">
+                    <h2 className="text-center">
                                 Date: <i>{
-                                    new Date(details.createdAt.toString()).getMonth() + '/'
-                                    + new Date(details.createdAt.toString()).getUTCDate() + '/'
-                                    + new Date(details.createdAt.toString()).getFullYear()
+                                    getDateString(details.createdAt.toString()) 
                                 }</i>
                             </h2>
                             <h3 className="text-center">Overall: {details.good_day.toString() === 'true' ?

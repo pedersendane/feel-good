@@ -2,7 +2,7 @@ import React from "react";
 import Home from '../pages/Home';
 import Dane from '../pages/Dane';
 import Breezie from '../pages/Breezie';
-import Logo from '../logo.svg';
+import Logo from '../logo.png';
 import {
   BrowserRouter as Router,
   Switch,

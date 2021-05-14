@@ -34,9 +34,8 @@ code {
 }
 
 #navImage {
-  margin: 20px 50px 20px 0;
-  width: 160px;
-  height: 70px;
+  margin: 20px 50px 20px 7%;
+  width: 35%;
   object-fit: contain;
   z-index: 10;
   cursor: pointer;
@@ -80,14 +79,15 @@ code {
 
 .navLink {
   padding: 2%;
+  font-weight: bolder;
   text-decoration: none;
   text-transform: none;
-  color: white;
+  color: #00bcd4;
   cursor: pointer;
-
-  &:hover {
-    color: "grey";
-  }
+}
+.navLink:hover {
+  color: white;
+  border: 1px solid white;
 }
 
 .card {

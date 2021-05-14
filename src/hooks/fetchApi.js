@@ -2,7 +2,7 @@ import React, {
     useState,
     useEffect
 } from 'react';
-import logo from '../logo.svg';
+import logo from '../logo.png';
 import ListItem from '../components/ListItem';
 import axios from 'axios';
 /*
