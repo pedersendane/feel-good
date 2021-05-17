@@ -18,6 +18,14 @@ code {
   text-align: center;
   padding-top: 2%;
 }
+.success{
+   color: #13aa52 
+  }
+  
+.failure{
+   color: red; 
+}
+
 
 #nav {
   background-color: #161b22;
@@ -302,7 +310,7 @@ html [type=button] {
 
 .btn-cyan {
   color: #fff;
-  background-color: #00bcd4 !important
+  background-color: #0d6efd !important
 }
 .btn-green {
   color: #fff;
@@ -316,7 +324,7 @@ html [type=button] {
 
 .btn {
   margin: .375rem;
-  color: inherit;
+  color: white;
   text-transform: uppercase;
   word-wrap: break-word;
   white-space: normal;
@@ -341,6 +349,10 @@ color: white;
 border-color: currentColor;
 }
 
+.nav-item{
+  cursor: pointer;
+}
+
 
 .btn:hover,
 .btn:focus {
@@ -363,7 +375,7 @@ border-color: currentColor;
 .btn {
   display: inline-block;
   font-weight: 400;
-  color: #212529;
+  color: white;
   text-align: center;
   vertical-align: middle;
   -webkit-user-select: none;

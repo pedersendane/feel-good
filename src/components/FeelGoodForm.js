@@ -228,7 +228,7 @@ export default class FeelGoodForm extends React.Component {
           </div>
         <div class="card-body" id="message-container" style={{ display: 'none' }}>
         <h1 className="text-center">New FeelGood Form</h1>
-          <div className="text-center" style={{ color: '#13aa52' }} id="success-message">
+          <div className="text-center success" id="success-message">
             <h2>{this.state.success}</h2>
             <div class="text-center py-4 mt-3">
             <button id="home-button" style={{display: 'none'}} class="btn btn-green waves-effect waves-light" type="button" onClick={function (){
@@ -236,7 +236,7 @@ export default class FeelGoodForm extends React.Component {
               }}>Home</button>
               </div>
           </div>
-        <div className="text-center" id="failure-message"><h1>{this.state.failure}</h1></div>
+        <div className="text-center failure" id="failure-message"><h1>{this.state.failure}</h1></div>
 
         <form id="feel-good-form" style={{'display': 'none'}} onSubmit={this.submit}>
           <div class="text-center ">

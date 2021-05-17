@@ -20,7 +20,8 @@ export default class ListItem extends React.Component{
             badDaysOnly: true,
             goodDaysOnly: false
         })
-        console.log(this.state);
+        console.log(event.target);
+        event.target.scrollIntoView();
     }
     goodDaysOnly(event) {
         this.setState({
@@ -50,7 +51,7 @@ export default class ListItem extends React.Component{
             console.log("Year: " + year)
             return String(month + '/' + day + '/' + year);
         }
-        const buttonRow = (<>
+        const newFormButton = (<>
             <div class="text-center py-4 mt-3">
                 <button
             class="btn btn-cyan waves-effect waves-light text-center"
@@ -64,27 +65,43 @@ export default class ListItem extends React.Component{
                         y.style.display = 'none';
             }}>Submit New Form</button>
             </div>
-            <div class="text-center py-4 mt-3">
-        <button
-            class="btn btn-cyan waves-effect waves-light text-center"
-            type="button"
-            onClick={this.badDaysOnly}>Bad Days</button>
-        <button
-            class="btn btn-cyan waves-effect waves-light text-center"
-            type="button"
-            onClick={this.goodDaysOnly}>Good Days</button>
-        <button
-            class="btn btn-cyan waves-effect waves-light text-center"
-            type="button"
-            onClick={this.allDays}>All Days</button>
-            </div>
         </>)
         
+        const allDaysTab = (
+            this.state.goodDaysOnly === false && this.state.badDaysOnly === false ?
+                <a class="nav-link active" aria-current="page" onClick={this.allDays}>All Days</a>
+                :
+                <a class="nav-link" onClick={this.allDays}>All Days</a>
+        )
+        const goodDaysTab = (
+            this.state.goodDaysOnly === true && this.state.badDaysOnly === false ?
+            <a class="nav-link active" aria-current="page" onClick={this.goodDaysOnly}>Good Days</a>
+            :
+            <a class="nav-link" onClick={this.goodDaysOnly}>Good Days</a>
+        )
+        const badDaysTab = (
+            this.state.badDaysOnly === true && this.state.goodDaysOnly === false ?
+            <a class="nav-link active" aria-current="page" onClick={this.badDaysOnly}>Bad Days</a>
+            :
+            <a class="nav-link" onClick={this.badDaysOnly}>Bad Days</a>
+        )
+       
         if (this.state.badDaysOnly) {
             return (
                 <div id="previousDays" style={{ display: 'none' }}>
                     <h2 class="text-center py-4">Previous Days</h2>
-                    {buttonRow}
+                    {newFormButton}
+                    <ul class="nav nav-pills">
+                        <li class="nav-item">
+                            {allDaysTab}
+                        </li>
+                        <li class="nav-item">
+                            {goodDaysTab}
+                        </li>
+                        <li class="nav-item">
+                            {badDaysTab}
+                        </li>
+                    </ul>
                     {badDays.map(details => (
                         <div style={{ 'backgroundColor': '#161b22' }} class="card-body py-4 mt-3" key={details.id}>
                     
@@ -127,7 +144,18 @@ export default class ListItem extends React.Component{
             return (
                 <div id="previousDays" style={{ display: 'none' }}>
                     <h2 class="text-center py-4">Previous Days</h2>
-                    {buttonRow}
+                    {newFormButton}
+                    <ul class="nav nav-pills">
+                        <li class="nav-item">
+                            {allDaysTab}
+                        </li>
+                        <li class="nav-item">
+                            {goodDaysTab}
+                        </li>
+                        <li class="nav-item">
+                            {badDaysTab}
+                        </li>
+                    </ul>
                     {goodDays.map(details => (
                         <div style={{ 'backgroundColor': '#161b22' }} class="card-body py-4 mt-3" key={details.id}>
                     
@@ -170,36 +198,76 @@ export default class ListItem extends React.Component{
             return (
                 <div id="previousDays" style={{ display: 'none' }}>
                     <h2 class="text-center py-4">Previous Days</h2>
-                    {buttonRow}
+                    {newFormButton}
+                    <ul class="nav nav-pills">
+                        <li class="nav-item">
+                            {allDaysTab}
+                        </li>
+                        <li class="nav-item">
+                            {goodDaysTab}
+                        </li>
+                        <li class="nav-item">
+                            {badDaysTab}
+                        </li>
+                    </ul>
                     {data.map(details => (
                         <div style={{ 'backgroundColor': '#161b22' }} class="card-body py-4 mt-3" key={details.id}>
                     
-                    <h2 className="text-center">
+                        <h2 className="text-center">
                                 Date: <i>{
                                     getDateString(details.createdAt.toString()) 
                                 }</i>
-                            </h2>
-                            <h3 className="text-center">Overall: {details.good_day.toString() === 'true' ?
-                                <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsUp} size={'lg'} /> :
-                                <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsDown} size={'lg'} />
-                            }</h3>
-                        
-                            <h3 className="text-center">Enough Sleep? {details.enough_sleep.toString() === 'true' ?
-                                <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsUp} size={'lg'} /> :
-                                <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsDown} size={'lg'} />
-                            }</h3>
-                            <h3 className="text-center">Did you take your medicine? {details.medicine.toString() === 'true' ?
-                                <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsUp} size={'lg'} /> :
-                                <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsDown} size={'lg'} />
-                            }</h3>
-                            <h3 className="text-center">Did you try to eat healthy? {details.diet.toString() === 'true' ?
-                                <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsUp} size={'lg'} /> :
-                                <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsDown} size={'lg'} />
-                            }</h3>
-                            <h3 className="text-center">Did you excercise? {details.excercise.toString() === 'true' ?
-                                <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsUp} size={'lg'} /> :
-                                <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsDown} size={'lg'} />
-                            }</h3>
+                        </h2>
+                            {
+                                details.good_day.toString() === 'true' ?
+                                    <h3 className="text-center success">Overall:
+                                        <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsUp} size={'lg'} />
+                                    </h3>
+                                    :
+                                    <h3 className="text-center failure">Overall:
+                                        <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsDown} size={'lg'} />
+                                    </h3>
+                            }
+                            {
+                                details.enough_sleep.toString() === 'true' ?
+                                    <h3 className="text-center success">Enough Sleep?
+                                        <FontAwesomeIcon className="fa fa-user prefix grey-text success" icon={faThumbsUp} size={'lg'} />
+                                    </h3>
+                                    :
+                                    <h3 className="text-center failure">Enough Sleep?
+                                        <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsDown} size={'lg'} />
+                                    </h3>
+                            }
+                            {
+                                details.medicine.toString() === 'true' ?
+                                    <h3 className="text-center success">Did you take your medicine?
+                                        <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsUp} size={'lg'} />
+                                    </h3>
+                                    :
+                                    <h3 className="text-center failure">Did you take your medicine?
+                                        <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsDown} size={'lg'} />
+                                    </h3>
+                            }
+                            {
+                                details.diet.toString() === 'true' ?
+                                    <h3 className="text-center success">Did you try to eat healthy? 
+                                        <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsUp} size={'lg'} />
+                                    </h3>
+                                    :
+                                    <h3 className="text-center failure">Did you try to eat healthy? 
+                                        <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsDown} size={'lg'} />
+                                    </h3>
+                            }
+                            {
+                                details.excercise.toString() === 'true' ?
+                                    <h3 className="text-center success">Did you excercise? 
+                                        <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsUp} size={'lg'} />
+                                    </h3>
+                                    :
+                                    <h3 className="text-center failure">Did you excercise? 
+                                        <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsDown} size={'lg'} />
+                                    </h3>
+                            }
                             <h3 className="text-center">Changes I would Like to make: </h3><h5 className="text-center">"{details.changes.toString()}"</h5>
                         
                         
