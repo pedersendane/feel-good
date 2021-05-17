@@ -105,31 +105,31 @@ export default class ListItem extends React.Component{
                     {badDays.map(details => (
                         <div style={{ 'backgroundColor': '#161b22' }} class="card-body py-4 mt-3" key={details.id}>
                     
-                            <h2 className="text-center">
+                    <h2 className="text-center">
                                 Date: <i>{
                                     getDateString(details.createdAt.toString()) 
                                 }</i>
                             </h2>
                             <h3 className="text-center">Overall: {details.good_day.toString() === 'true' ?
-                                <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsUp} size={'lg'} /> :
-                                <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsDown} size={'lg'} />
+                                <FontAwesomeIcon className="fa fa-user prefix success" icon={faThumbsUp} size={'lg'} /> :
+                                <FontAwesomeIcon className="fa fa-user prefix failure" icon={faThumbsDown} size={'lg'} />
                             }</h3>
                         
                             <h3 className="text-center">Enough Sleep? {details.enough_sleep.toString() === 'true' ?
-                                <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsUp} size={'lg'} /> :
-                                <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsDown} size={'lg'} />
+                                <FontAwesomeIcon className="fa fa-user prefix success" icon={faThumbsUp} size={'lg'} /> :
+                                <FontAwesomeIcon className="fa fa-user prefix failure" icon={faThumbsDown} size={'lg'} />
                             }</h3>
                             <h3 className="text-center">Did you take your medicine? {details.medicine.toString() === 'true' ?
-                                <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsUp} size={'lg'} /> :
-                                <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsDown} size={'lg'} />
+                                <FontAwesomeIcon className="fa fa-user prefix success" icon={faThumbsUp} size={'lg'} /> :
+                                <FontAwesomeIcon className="fa fa-user prefix failure" icon={faThumbsDown} size={'lg'} />
                             }</h3>
                             <h3 className="text-center">Did you try to eat healthy? {details.diet.toString() === 'true' ?
-                                <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsUp} size={'lg'} /> :
-                                <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsDown} size={'lg'} />
+                                <FontAwesomeIcon className="fa fa-user prefix success" icon={faThumbsUp} size={'lg'} /> :
+                                <FontAwesomeIcon className="fa fa-user prefix failure" icon={faThumbsDown} size={'lg'} />
                             }</h3>
                             <h3 className="text-center">Did you excercise? {details.excercise.toString() === 'true' ?
-                                <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsUp} size={'lg'} /> :
-                                <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsDown} size={'lg'} />
+                                <FontAwesomeIcon className="fa fa-user prefix success" icon={faThumbsUp} size={'lg'} /> :
+                                <FontAwesomeIcon className="fa fa-user prefix failure" icon={faThumbsDown} size={'lg'} />
                             }</h3>
                             <h3 className="text-center">Changes I would Like to make: </h3><h5 className="text-center">"{details.changes.toString()}"</h5>
                         
@@ -165,25 +165,25 @@ export default class ListItem extends React.Component{
                                 }</i>
                             </h2>
                             <h3 className="text-center">Overall: {details.good_day.toString() === 'true' ?
-                                <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsUp} size={'lg'} /> :
-                                <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsDown} size={'lg'} />
+                                <FontAwesomeIcon className="fa fa-user prefix success" icon={faThumbsUp} size={'lg'} /> :
+                                <FontAwesomeIcon className="fa fa-user prefix failure" icon={faThumbsDown} size={'lg'} />
                             }</h3>
                         
                             <h3 className="text-center">Enough Sleep? {details.enough_sleep.toString() === 'true' ?
-                                <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsUp} size={'lg'} /> :
-                                <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsDown} size={'lg'} />
+                                <FontAwesomeIcon className="fa fa-user prefix success" icon={faThumbsUp} size={'lg'} /> :
+                                <FontAwesomeIcon className="fa fa-user prefix failure" icon={faThumbsDown} size={'lg'} />
                             }</h3>
                             <h3 className="text-center">Did you take your medicine? {details.medicine.toString() === 'true' ?
-                                <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsUp} size={'lg'} /> :
-                                <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsDown} size={'lg'} />
+                                <FontAwesomeIcon className="fa fa-user prefix success" icon={faThumbsUp} size={'lg'} /> :
+                                <FontAwesomeIcon className="fa fa-user prefix failure" icon={faThumbsDown} size={'lg'} />
                             }</h3>
                             <h3 className="text-center">Did you try to eat healthy? {details.diet.toString() === 'true' ?
-                                <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsUp} size={'lg'} /> :
-                                <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsDown} size={'lg'} />
+                                <FontAwesomeIcon className="fa fa-user prefix success" icon={faThumbsUp} size={'lg'} /> :
+                                <FontAwesomeIcon className="fa fa-user prefix failure" icon={faThumbsDown} size={'lg'} />
                             }</h3>
                             <h3 className="text-center">Did you excercise? {details.excercise.toString() === 'true' ?
-                                <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsUp} size={'lg'} /> :
-                                <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsDown} size={'lg'} />
+                                <FontAwesomeIcon className="fa fa-user prefix success" icon={faThumbsUp} size={'lg'} /> :
+                                <FontAwesomeIcon className="fa fa-user prefix failure" icon={faThumbsDown} size={'lg'} />
                             }</h3>
                             <h3 className="text-center">Changes I would Like to make: </h3><h5 className="text-center">"{details.changes.toString()}"</h5>
                         
@@ -213,61 +213,32 @@ export default class ListItem extends React.Component{
                     {data.map(details => (
                         <div style={{ 'backgroundColor': '#161b22' }} class="card-body py-4 mt-3" key={details.id}>
                     
-                        <h2 className="text-center">
+                    <h2 className="text-center">
                                 Date: <i>{
                                     getDateString(details.createdAt.toString()) 
                                 }</i>
-                        </h2>
-                            {
-                                details.good_day.toString() === 'true' ?
-                                    <h3 className="text-center success">Overall:
-                                        <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsUp} size={'lg'} />
-                                    </h3>
-                                    :
-                                    <h3 className="text-center failure">Overall:
-                                        <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsDown} size={'lg'} />
-                                    </h3>
-                            }
-                            {
-                                details.enough_sleep.toString() === 'true' ?
-                                    <h3 className="text-center success">Enough Sleep?
-                                        <FontAwesomeIcon className="fa fa-user prefix grey-text success" icon={faThumbsUp} size={'lg'} />
-                                    </h3>
-                                    :
-                                    <h3 className="text-center failure">Enough Sleep?
-                                        <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsDown} size={'lg'} />
-                                    </h3>
-                            }
-                            {
-                                details.medicine.toString() === 'true' ?
-                                    <h3 className="text-center success">Did you take your medicine?
-                                        <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsUp} size={'lg'} />
-                                    </h3>
-                                    :
-                                    <h3 className="text-center failure">Did you take your medicine?
-                                        <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsDown} size={'lg'} />
-                                    </h3>
-                            }
-                            {
-                                details.diet.toString() === 'true' ?
-                                    <h3 className="text-center success">Did you try to eat healthy? 
-                                        <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsUp} size={'lg'} />
-                                    </h3>
-                                    :
-                                    <h3 className="text-center failure">Did you try to eat healthy? 
-                                        <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsDown} size={'lg'} />
-                                    </h3>
-                            }
-                            {
-                                details.excercise.toString() === 'true' ?
-                                    <h3 className="text-center success">Did you excercise? 
-                                        <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsUp} size={'lg'} />
-                                    </h3>
-                                    :
-                                    <h3 className="text-center failure">Did you excercise? 
-                                        <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faThumbsDown} size={'lg'} />
-                                    </h3>
-                            }
+                            </h2>
+                            <h3 className="text-center">Overall: {details.good_day.toString() === 'true' ?
+                                <FontAwesomeIcon className="fa fa-user prefix success" icon={faThumbsUp} size={'lg'} /> :
+                                <FontAwesomeIcon className="fa fa-user prefix failure" icon={faThumbsDown} size={'lg'} />
+                            }</h3>
+                        
+                            <h3 className="text-center">Enough Sleep? {details.enough_sleep.toString() === 'true' ?
+                                <FontAwesomeIcon className="fa fa-user prefix success" icon={faThumbsUp} size={'lg'} /> :
+                                <FontAwesomeIcon className="fa fa-user prefix failure" icon={faThumbsDown} size={'lg'} />
+                            }</h3>
+                            <h3 className="text-center">Did you take your medicine? {details.medicine.toString() === 'true' ?
+                                <FontAwesomeIcon className="fa fa-user prefix success" icon={faThumbsUp} size={'lg'} /> :
+                                <FontAwesomeIcon className="fa fa-user prefix failure" icon={faThumbsDown} size={'lg'} />
+                            }</h3>
+                            <h3 className="text-center">Did you try to eat healthy? {details.diet.toString() === 'true' ?
+                                <FontAwesomeIcon className="fa fa-user prefix success" icon={faThumbsUp} size={'lg'} /> :
+                                <FontAwesomeIcon className="fa fa-user prefix failure" icon={faThumbsDown} size={'lg'} />
+                            }</h3>
+                            <h3 className="text-center">Did you excercise? {details.excercise.toString() === 'true' ?
+                                <FontAwesomeIcon className="fa fa-user prefix success" icon={faThumbsUp} size={'lg'} /> :
+                                <FontAwesomeIcon className="fa fa-user prefix failure" icon={faThumbsDown} size={'lg'} />
+                            }</h3>
                             <h3 className="text-center">Changes I would Like to make: </h3><h5 className="text-center">"{details.changes.toString()}"</h5>
                         
                         

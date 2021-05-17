@@ -195,7 +195,7 @@ export default class FeelGoodForm extends React.Component {
         function (e) {
           document.getElementById('message-container').style.display = 'block';
         var x = document.getElementById('feel-good-form');
-        x.style.display = 'block';
+        x.style.display = 'initial';
         x.scrollIntoView();
         var y = document.getElementById('previousDays');
         y.style.display = 'none';
