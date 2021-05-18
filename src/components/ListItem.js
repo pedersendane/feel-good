@@ -52,9 +52,9 @@ export default class ListItem extends React.Component{
             return String(month + '/' + day + '/' + year);
         }
         const newFormButton = (<>
-            <div class="text-center py-4 mt-3">
+            <div className="text-center py-4 mt-3">
                 <button
-            class="btn btn-cyan waves-effect waves-light text-center"
+            className="btn btn-cyan waves-effect waves-light text-center"
             type="button"
                     onClick={function () {
                         document.getElementById('message-container').style.display = 'block';
@@ -69,41 +69,41 @@ export default class ListItem extends React.Component{
         
         const allDaysTab = (
             this.state.goodDaysOnly === false && this.state.badDaysOnly === false ?
-                <a class="nav-link active" aria-current="page" onClick={this.allDays}>All Days</a>
+                <a className="nav-link active" aria-current="page" onClick={this.allDays}>All Days</a>
                 :
-                <a class="nav-link" onClick={this.allDays}>All Days</a>
+                <a className="nav-link" onClick={this.allDays}>All Days</a>
         )
         const goodDaysTab = (
             this.state.goodDaysOnly === true && this.state.badDaysOnly === false ?
-            <a class="nav-link active" aria-current="page" onClick={this.goodDaysOnly}>Good Days</a>
+            <a className="nav-link active" aria-current="page" onClick={this.goodDaysOnly}>Good Days</a>
             :
-            <a class="nav-link" onClick={this.goodDaysOnly}>Good Days</a>
+            <a className="nav-link" onClick={this.goodDaysOnly}>Good Days</a>
         )
         const badDaysTab = (
             this.state.badDaysOnly === true && this.state.goodDaysOnly === false ?
-            <a class="nav-link active" aria-current="page" onClick={this.badDaysOnly}>Bad Days</a>
+            <a className="nav-link active" aria-current="page" onClick={this.badDaysOnly}>Bad Days</a>
             :
-            <a class="nav-link" onClick={this.badDaysOnly}>Bad Days</a>
+            <a className="nav-link" onClick={this.badDaysOnly}>Bad Days</a>
         )
        
         if (this.state.badDaysOnly) {
             return (
                 <div id="previousDays" style={{ display: 'none' }}>
-                    <h2 class="text-center py-4">Previous Days</h2>
+                    <h2 className="text-center py-4">Previous Days</h2>
                     {newFormButton}
-                    <ul class="nav nav-pills">
-                        <li class="nav-item">
+                    <ul className="nav nav-pills">
+                        <li className="nav-item">
                             {allDaysTab}
                         </li>
-                        <li class="nav-item">
+                        <li className="nav-item">
                             {goodDaysTab}
                         </li>
-                        <li class="nav-item">
+                        <li className="nav-item">
                             {badDaysTab}
                         </li>
                     </ul>
                     {badDays.map(details => (
-                        <div style={{ 'backgroundColor': '#161b22' }} class="card-body py-4 mt-3" key={details.id}>
+                        <div style={{ 'backgroundColor': '#161b22' }} className="card-body py-4 mt-3" key={details.id}>
                     
                     <h2 className="text-center">
                                 Date: <i>{
@@ -143,21 +143,21 @@ export default class ListItem extends React.Component{
         } else if (this.state.goodDaysOnly) {
             return (
                 <div id="previousDays" style={{ display: 'none' }}>
-                    <h2 class="text-center py-4">Previous Days</h2>
+                    <h2 className="text-center py-4">Previous Days</h2>
                     {newFormButton}
-                    <ul class="nav nav-pills">
-                        <li class="nav-item">
+                    <ul className="nav nav-pills">
+                        <li className="nav-item">
                             {allDaysTab}
                         </li>
-                        <li class="nav-item">
+                        <li className="nav-item">
                             {goodDaysTab}
                         </li>
-                        <li class="nav-item">
+                        <li className="nav-item">
                             {badDaysTab}
                         </li>
                     </ul>
                     {goodDays.map(details => (
-                        <div style={{ 'backgroundColor': '#161b22' }} class="card-body py-4 mt-3" key={details.id}>
+                        <div style={{ 'backgroundColor': '#161b22' }} className="card-body py-4 mt-3" key={details.id}>
                     
                     <h2 className="text-center">
                                 Date: <i>{
@@ -197,21 +197,21 @@ export default class ListItem extends React.Component{
         } else {
             return (
                 <div id="previousDays" style={{ display: 'none' }}>
-                    <h2 class="text-center py-4">Previous Days</h2>
+                    <h2 className="text-center py-4">Previous Days</h2>
                     {newFormButton}
-                    <ul class="nav nav-pills">
-                        <li class="nav-item">
+                    <ul className="nav nav-pills">
+                        <li className="nav-item">
                             {allDaysTab}
                         </li>
-                        <li class="nav-item">
+                        <li className="nav-item">
                             {goodDaysTab}
                         </li>
-                        <li class="nav-item">
+                        <li className="nav-item">
                             {badDaysTab}
                         </li>
                     </ul>
                     {data.map(details => (
-                        <div style={{ 'backgroundColor': '#161b22' }} class="card-body py-4 mt-3" key={details.id}>
+                        <div style={{ 'backgroundColor': '#161b22' }} className="card-body py-4 mt-3" key={details.id}>
                     
                     <h2 className="text-center">
                                 Date: <i>{

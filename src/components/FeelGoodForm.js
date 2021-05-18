@@ -1,9 +1,4 @@
-import React, {
-  useState,
-  useEffect,
-  useRef
-} from 'react';
-import axios from 'axios';
+import React from 'react';
 import { faBed, faPills, faUtensils, faRunning, faSmile, faClock, faEraser, faComment} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -187,9 +182,9 @@ export default class FeelGoodForm extends React.Component {
   }
   
   render() {
-    const buttons = (<div  class="text-center py-4 mt-3">
+    const buttons = (<div  className="text-center py-4 mt-3">
   <button
-      class="btn btn-cyan waves-effect waves-light text-center"
+      className="btn btn-cyan waves-effect waves-light text-center"
       type="button"
       onClick={
         function (e) {
@@ -205,7 +200,7 @@ export default class FeelGoodForm extends React.Component {
     }>Submit New Form</button>
       
        <button
-      class="btn btn-cyan waves-effect waves-light text-center"
+      className="btn btn-cyan waves-effect waves-light text-center"
       type="button"
       onClick={
       function (e) {
@@ -223,15 +218,15 @@ export default class FeelGoodForm extends React.Component {
     return (
       <>
       <div id="topButtonsContainer">
-        <h2 class="text-center py-4">FeelGood Forms</h2>
+        <h2 className="text-center py-4">FeelGood Forms</h2>
           {buttons}
           </div>
-        <div class="card-body" id="message-container" style={{ display: 'none' }}>
+        <div className="card-body" id="message-container" style={{ display: 'none' }}>
         <h1 className="text-center">New FeelGood Form</h1>
           <div className="text-center success" id="success-message">
             <h2>{this.state.success}</h2>
-            <div class="text-center py-4 mt-3">
-            <button id="home-button" style={{display: 'none'}} class="btn btn-green waves-effect waves-light" type="button" onClick={function (){
+            <div className="text-center py-4 mt-3">
+            <button id="home-button" style={{display: 'none'}} className="btn btn-green waves-effect waves-light" type="button" onClick={function (){
               window.location.href = '/feel-good'
               }}>Home</button>
               </div>
@@ -239,78 +234,78 @@ export default class FeelGoodForm extends React.Component {
         <div className="text-center failure" id="failure-message"><h1>{this.state.failure}</h1></div>
 
         <form id="feel-good-form" style={{'display': 'none'}} onSubmit={this.submit}>
-          <div class="text-center ">
+          <div className="text-center ">
             <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faBed} size={'lg'} />
-            <label class="font-weight-light">&nbsp;Enough Sleep?</label>
+            <label className="font-weight-light">&nbsp;Enough Sleep?</label>
           </div>
-          <div class="text-center py-4">
-            <button class="btn btn-green waves-effect waves-light" type="button" value={true} onClick={this.enoughSleep}>Yes</button>
-            <button class="btn btn-red waves-effect waves-light" type="button" value={false} onClick={this.enoughSleep}>No</button>
+          <div className="text-center py-4">
+            <button className="btn btn-green waves-effect waves-light" type="button" value={true} onClick={this.enoughSleep}>Yes</button>
+            <button className="btn btn-red waves-effect waves-light" type="button" value={false} onClick={this.enoughSleep}>No</button>
           </div>
 
-          <div class="text-center ">
+          <div className="text-center ">
             <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faPills} size={'lg'} />
-            <label class="font-weight-light">&nbsp;Did you take your medicine?</label>
+            <label className="font-weight-light">&nbsp;Did you take your medicine?</label>
           </div>
-          <div class="text-center py-4">
-            <button class="btn btn-green waves-effect waves-light" type="button" value={true} onClick={this.medicine} >Yes</button>
-            <button class="btn btn-red waves-effect waves-light" type="button" value={false} onClick={this.medicine} >No</button>
+          <div className="text-center py-4">
+            <button className="btn btn-green waves-effect waves-light" type="button" value={true} onClick={this.medicine} >Yes</button>
+            <button className="btn btn-red waves-effect waves-light" type="button" value={false} onClick={this.medicine} >No</button>
           </div>
 
-          <div class="text-center ">
+          <div className="text-center ">
             <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faUtensils} size={'lg'} />
-            <label class="font-weight-light">&nbsp;Did you eat healthier?</label>
+            <label className="font-weight-light">&nbsp;Did you eat healthier?</label>
           </div>
-          <div class="text-center py-4">
-            <button class="btn btn-green waves-effect waves-light" type="button" value={true} onClick={this.diet}>Yes</button>
-            <button class="btn btn-red waves-effect waves-light" type="button" value={false} onClick={this.diet}>No</button>
+          <div className="text-center py-4">
+            <button className="btn btn-green waves-effect waves-light" type="button" value={true} onClick={this.diet}>Yes</button>
+            <button className="btn btn-red waves-effect waves-light" type="button" value={false} onClick={this.diet}>No</button>
           </div>
 
-          <div class="text-center ">
+          <div className="text-center ">
             <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faRunning} size={'lg'} />
-            <label class="font-weight-light">&nbsp;Did you excercise?</label>
+            <label className="font-weight-light">&nbsp;Did you excercise?</label>
           </div>
-          <div class="text-center py-4">
-            <button class="btn btn-green waves-effect waves-light" type="button" value={true} onClick={this.excercise}>Yes</button>
-            <button class="btn btn-red waves-effect waves-light" type="button" value={false} onClick={this.excercise}>No</button>
+          <div className="text-center py-4">
+            <button className="btn btn-green waves-effect waves-light" type="button" value={true} onClick={this.excercise}>Yes</button>
+            <button className="btn btn-red waves-effect waves-light" type="button" value={false} onClick={this.excercise}>No</button>
           </div>
 
-          <div class="text-center ">
+          <div className="text-center ">
             <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faSmile} size={'lg'} />
-            <label class="font-weight-light">&nbsp;Did you have a good day?</label>
+            <label className="font-weight-light">&nbsp;Did you have a good day?</label>
           </div>
-          <div class="text-center py-4">
-            <button class="btn btn-green waves-effect waves-light" type="button" value={true} onClick={this.goodDay}>Yes</button>
-            <button class="btn btn-red waves-effect waves-light" type="button" value={false} onClick={this.goodDay}>No</button>
+          <div className="text-center py-4">
+            <button className="btn btn-green waves-effect waves-light" type="button" value={true} onClick={this.goodDay}>Yes</button>
+            <button className="btn btn-red waves-effect waves-light" type="button" value={false} onClick={this.goodDay}>No</button>
           </div>
 
-          <div class="text-center ">
+          <div className="text-center ">
             <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faClock} size={'lg'} />
-            <label class="font-weight-light">&nbsp;What time did you wake up?</label>
-            <div class="md-form">
-              <input type="text" id="materialFormCardEmailEx" class="form-control" value={this.state.wake_up} onChange={this.wakeUp} />
+            <label className="font-weight-light">&nbsp;What time did you wake up?</label>
+            <div className="md-form">
+              <input type="text" id="materialFormCardEmailEx" className="form-control" value={this.state.wake_up} onChange={this.wakeUp} />
             </div>
           </div>
 
-          <div class="text-center ">
+          <div className="text-center ">
             <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faEraser} size={'lg'} />
-            <label class="font-weight-light">&nbsp;List any changes you would like to make to your day:</label>
-            <div class="md-form">
-              <input type="text" id="materialFormCardEmailEx" class="form-control" value={this.state.changes} onChange={this.changes}/>
+            <label className="font-weight-light">&nbsp;List any changes you would like to make to your day:</label>
+            <div className="md-form">
+              <input type="text" id="materialFormCardEmailEx" className="form-control" value={this.state.changes} onChange={this.changes}/>
             </div>
           </div>
 
-          <div class="text-center ">
+          <div className="text-center ">
             <FontAwesomeIcon className="fa fa-user prefix grey-text" icon={faComment} size={'lg'} />
-            <label class="font-weight-light">&nbsp;Additional Comments: </label>
-            <div class="md-form">
-              <input type="text" id="materialFormCardEmailEx" class="form-control" value={this.state.comments} onChange={this.comments}/>
+            <label className="font-weight-light">&nbsp;Additional Comments: </label>
+            <div className="md-form">
+              <input type="text" id="materialFormCardEmailEx" className="form-control" value={this.state.comments} onChange={this.comments}/>
             </div>
           </div>
 
-          <div class="text-center py-4 mt-3">
-            <button class="btn btn-cyan waves-effect waves-light" type="button" onClick={this.submit}>Submit</button>
-            <button class="btn btn-cyan waves-effect waves-light" type="button" onClick={this.cancel}>Cancel</button>
+          <div className="text-center py-4 mt-3">
+            <button className="btn btn-cyan waves-effect waves-light" type="button" onClick={this.submit}>Submit</button>
+            <button className="btn btn-cyan waves-effect waves-light" type="button" onClick={this.cancel}>Cancel</button>
 
             </div>
         </form>
