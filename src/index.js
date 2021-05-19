@@ -12,7 +12,8 @@ ReactDOM.render(
   <Auth0Provider
     domain={domain}
     clientId={clientId}
-    redirectUri={redirect}>
+    redirectUri={redirect}
+  >
     <App />
   </Auth0Provider>,
   document.getElementById('root')
