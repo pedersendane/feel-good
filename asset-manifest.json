@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/feel-good/static/css/main.c28debee.chunk.css",
-    "main.js": "/feel-good/static/js/main.97ca6f6b.chunk.js",
-    "main.js.map": "/feel-good/static/js/main.97ca6f6b.chunk.js.map",
+    "main.js": "/feel-good/static/js/main.2b51303e.chunk.js",
+    "main.js.map": "/feel-good/static/js/main.2b51303e.chunk.js.map",
     "runtime-main.js": "/feel-good/static/js/runtime-main.7f0493b0.js",
     "runtime-main.js.map": "/feel-good/static/js/runtime-main.7f0493b0.js.map",
-    "static/js/2.18ce9ca8.chunk.js": "/feel-good/static/js/2.18ce9ca8.chunk.js",
-    "static/js/2.18ce9ca8.chunk.js.map": "/feel-good/static/js/2.18ce9ca8.chunk.js.map",
+    "static/js/2.da8830bb.chunk.js": "/feel-good/static/js/2.da8830bb.chunk.js",
+    "static/js/2.da8830bb.chunk.js.map": "/feel-good/static/js/2.da8830bb.chunk.js.map",
     "index.html": "/feel-good/index.html",
     "static/css/main.c28debee.chunk.css.map": "/feel-good/static/css/main.c28debee.chunk.css.map",
-    "static/js/2.18ce9ca8.chunk.js.LICENSE.txt": "/feel-good/static/js/2.18ce9ca8.chunk.js.LICENSE.txt"
+    "static/js/2.da8830bb.chunk.js.LICENSE.txt": "/feel-good/static/js/2.da8830bb.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7f0493b0.js",
-    "static/js/2.18ce9ca8.chunk.js",
+    "static/js/2.da8830bb.chunk.js",
     "static/css/main.c28debee.chunk.css",
-    "static/js/main.97ca6f6b.chunk.js"
+    "static/js/main.2b51303e.chunk.js"
   ]
 }
