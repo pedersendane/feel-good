@@ -27,7 +27,7 @@ export default function Navbar(){
   }
   else if (!isLoading) {
     if (isAuthenticated) {
-      isDane = (user.email === "pedersen.dane@outlook.com" || user.email === "daneknute@gmail.com") ? true : false
+      isDane = (user.email === "pedersen.dane@outlook.com") ? true : false
       isBreezie = (user.email === "bree1224@yahoo.com") ? true : false;
     }
     if (isDane) {
@@ -40,8 +40,7 @@ export default function Navbar(){
                   <img id="navImage" src={Logo} alt={'Logo'} />
                 </Link>
                 <div id="navLinkContainer">
-                  <NavLink className="navLink" to="/feel-good/dane">Dane</NavLink>
-                  <NavLink className="navLink" to="/feel-good/breezie">Breezie</NavLink>
+                  <NavLink className="navLink" to="/feel-good/dane">View Goals</NavLink>
                   <LoginButton />
                   <LogoutButton />
                 </div>
@@ -75,8 +74,7 @@ export default function Navbar(){
                   <img id="navImage" src={Logo} alt={'Logo'} />
                 </Link>
                 <div id="navLinkContainer">
-                  <NavLink className="navLink" to="/feel-good/dane">Dane</NavLink>
-                  <NavLink className="navLink" to="/feel-good/breezie">Breezie</NavLink>
+                  <NavLink className="navLink" to="/feel-good/breezie">View Goals</NavLink>
                   <LoginButton />
                   <LogoutButton />
                 </div>

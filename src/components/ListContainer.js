@@ -3,10 +3,10 @@ import React from 'react'
 import FetchDayDetails from '../hooks/fetchApi';
 
 export default function ListContainer(props) {
-    const { name } = props.name;
-    
+    const user  = props.user;
+    const isDane = user.email === "pedersen.dane@outlook.com";
+    const isBreezie = user.email === "bree1224@yahoo.com";
         return (
-            <FetchDayDetails />
+            <FetchDayDetails dane={isDane} breezie={isBreezie}/>
         );
-     
 }

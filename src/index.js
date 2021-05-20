@@ -6,7 +6,13 @@ import { Auth0Provider } from '@auth0/auth0-react';
 
 const domain = process.env.REACT_APP_AUTH0_DOMAIN;
 const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
-const redirect = window.location.origin + '/feel-good';
+let redirect;
+if (window.location.hostname.includes('localhost')){
+  redirect = window.location.origin;
+} else {
+  redirect = window.location.origin + '/feel-good';
+}
+
 
 ReactDOM.render(
   <Auth0Provider
