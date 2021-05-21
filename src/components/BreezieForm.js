@@ -251,8 +251,8 @@ export default class BreezieForm extends React.Component {
         redirect: 'follow'
       };
 
-      //fetch("https://highscore-api.herokuapp.com/breezie-day-details/", requestOptions)
-      fetch("http://localhost:9000/breezie-day-details/", requestOptions)
+      fetch("https://highscore-api.herokuapp.com/breezie-day-details/", requestOptions)
+      //fetch("http://localhost:9000/breezie-day-details/", requestOptions)
         .then(response => {
           if (response.ok) {
             console.log(response);
